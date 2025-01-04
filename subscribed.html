@@ -14,7 +14,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./countdown.js" defer></script>
 
     <!-- Styles -->
     <link
@@ -41,6 +40,11 @@
     class="bg-gray-100 flex items-center justify-center min-h-screen"
     style="font-family: 'Nunito', sans-serif"
   >
+    <script>
+      const referer = document.referrer;
+      console.log(referer);
+    </script>
+
     <div class="p-8 rounded-lg max-w-md w-full text-center">
       <!-- Logo -->
       <img
