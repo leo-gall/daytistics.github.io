@@ -14,7 +14,6 @@ export default class WebComponent extends HTMLElement {
         throw new Error(`HTML file not found for component ${this.name}`);
       }
       const html = await htmlResponse.text();
-      debugger;
       this.shadowRoot.innerHTML = html;
 
       this.setupGlobalCSS();
