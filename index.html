@@ -1,49 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your App Name</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daytistics</title>
+    <meta
+      name="description"
+      content="A mobile app to track your daily activities and well-being with powerful analytics. Transform your habits through data-driven insights."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./logo.png" type="image/x-icon" />
+
+    <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="p-8 rounded-lg  max-w-md w-full text-center">
-        <!-- Logo -->
-        <img src="/placeholder.svg?height=100&width=100" alt="App Logo" class="mx-auto mb-6 w-24 h-24">
+    <script src="./countdown.js" defer></script>
 
-        <!-- App Name -->
-        <h1 class="text-3xl font-bold mb-4 text-gray-800">Your App Name</h1>
+    <!-- Styles -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
 
-        <!-- Description -->
-        <p class="text-gray-600 mb-8">A brief description of your amazing mobile application. Highlight its key features and benefits.</p>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gray-100 flex items-center justify-center min-h-screen"
+    style="font-family: 'Nunito', sans-serif"
+  >
+    <div class="p-8 rounded-lg max-w-md w-full text-center">
+      <!-- Logo -->
+      <img
+        src="./logo.png"
+        alt="Daytistics Logo"
+        class="mx-auto mb-6 w-24 h-24 rounded-full"
+      />
 
-        <!-- App Store Links -->
-        <div class="flex justify-center space-x-4 mb-8">
-            <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
-                <i class="fab fa-apple mr-2"></i> App Store
-            </a>
-            <a href="#" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
-                <i class="fab fa-google-play mr-2"></i> Google Play
-            </a>
+      <!-- App Name -->
+      <h1 class="text-3xl font-bold mb-4 text-gray-800">Daytistics</h1>
+
+      <!-- Description -->
+      <p class="text-gray-600 mb-8">
+        A mobile app to track your daily activities and well-being with powerful
+        analytics. Transform your habits through data-driven insights.
+      </p>
+
+      <!-- App Store Links -->
+      <div class="flex justify-center space-x-4 mb-8">
+        <!-- <a
+          href="#"
+          class="bg-black text-white px-4 py-2 rounded-lg flex items-center"
+        >
+          <i class="fab fa-apple mr-2"></i> App Store
+        </a>
+        <a
+          href="#"
+          class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center"
+        >
+          <i class="fab fa-google-play mr-2"></i> Google Play
+        </a> -->
+        <div>
+          <span id="countdown" class="text-2xl font-bold" />
         </div>
+      </div>
 
-        <!-- Social Media Icons -->
-        <div class="flex justify-center space-x-4">
-            <a href="#" class="text-blue-600 hover:text-blue-800">
-                <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="#" class="text-blue-400 hover:text-blue-600">
-                <i class="fab fa-twitter fa-2x"></i>
-            </a>
-            <a href="#" class="text-pink-600 hover:text-pink-800">
-                <i class="fab fa-instagram fa-2x"></i>
-            </a>
-            <a href="#" class="text-blue-700 hover:text-blue-900">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-        </div>
+      <!-- Social Media Icons -->
+      <div class="flex justify-center space-x-4">
+        <a
+          href="https://github.com/daytistics"
+          class="text-black/80 hover:text-black"
+          target="_blank"
+          aria-label="Visit Daytistics on GitHub"
+        >
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a
+          href="https://discord.gg/ccud6VkTv8"
+          class="text-[#7289DA] hover:text-[#7289DA]/90"
+          aria-label="Join Daytistics on Discord"
+        >
+          <i class="fab fa-discord fa-2x"></i>
+        </a>
+        <a
+          href="https://bsky.app/profile/daytistics.bsky.social"
+          class="text-blue-500 hover:text-blue-600"
+          target="_blank"
+          aria-label="Follow Daytistics on BlueSky"
+        >
+          <svg
+            fill="none"
+            viewBox="0 0 64 57"
+            width="30"
+            style="width: 28px; height: 32"
+          >
+            <path
+              fill="currentColor"
+              d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
+            ></path>
+          </svg>
+        </a>
+      </div>
     </div>
-</body>
+  </body>
 </html>
-
