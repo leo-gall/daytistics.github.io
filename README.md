@@ -1,3 +1,3 @@
 # Daytistics Website
 
-This is Daytistics' temporary website. After the release, it will be replaced with a news website.
+This is Daytistics' temporary website. After the release, it will be replaced with a new website.

@@ -24,12 +24,11 @@ body {
 }
 
 .logo {
+    position: relative;
+    top: 30px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.5rem;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 9999px;
+
 }
 
 /* Heading Styles */
@@ -67,23 +66,12 @@ body {
 .social-icon-github {
     color: rgba(0, 0, 0, 0.8);
 }
-
-.social-icon-github:hover {
-    color: black;
-}
-
-.social-icon-discord {
-    color: #7289da;
-}
-
-.social-icon-discord:hover {
-    color: #536dcb;
+.social-icon-polar {
+    color: rgb(3, 98, 255);
 }
 
 .social-icon-bluesky {
     color: #3b82f6 !important;
 }
 
-.social-icon-bluesky:hover {
-    color: #2563eb !important;
-}
+
