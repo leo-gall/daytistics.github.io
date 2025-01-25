@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Daytistics - Legal</title>
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A mobile app to track your daily activities and well-being with powerful analytics. Transform your habits through data-driven insights."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/svg/logo.svg" type="image/x-icon" />
+
+    <!-- Tailwind CSS -->
+    <script src="./assets/js/tailwind.js"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./globals.css" />
+
+    <!-- Analytics -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-domains="daytistics.com"
+      data-website-id="9027f875-0244-4b7f-b298-6748df4fffb3"
+    ></script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      function toggleDarkMode() {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+    <!-- Dark Mode Toggle -->
+    <button
+      onclick="toggleDarkMode()"
+      class="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      aria-label="Toggle dark mode"
+    >
+      <svg
+        class="w-6 h-6 hidden dark:block text-yellow-500"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
+        />
+      </svg>
+      <svg
+        class="w-6 h-6 block dark:hidden text-gray-700"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+    </button>
+
+    <!-- Back to Home -->
+    <a
+      href="/"
+      class="fixed top-4 left-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors text-gray-700 dark:text-gray-200"
+      aria-label="Back to home"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+        />
+      </svg>
+    </a>
+
+    <!-- Main Content -->
+    <div class="min-h-screen py-16 px-4">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8 text-gray-800 dark:text-white">
+          Imprint
+        </h1>
+
+        <div class="space-y-8 text-gray-600 dark:text-gray-300">
+          <section class="space-y-4">
+            <h2
+              class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
+            >
+              Information according to § 5 TMG
+            </h2>
+            <p>
+              <strong>Address</strong><br />
+              Leo Gall <br />
+              Föhrenweg 21 <br />
+              86926 Greifenberg <br />
+              Bavaria, Germany
+            </p>
+            <div class="space-y-1">
+              <p><strong>Represented by</strong> Leo Gall</p>
+              <p>
+                <strong>E-Mail: </strong>
+                <a
+                  href="mailto:info@piparo.tech"
+                  class="text-primary hover:underline"
+                  >hi@lgll.dev</a
+                >
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2
+              class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
+            >
+              Disclaimer
+            </h2>
+            <h3 class="text-xl font-semibold mb-2 mt-5">
+              Liability for contents
+            </h3>
+            <p>
+              The contents of our pages were created with the utmost care.
+              However, we cannot guarantee the accuracy, completeness, and
+              timeliness of the content. As a service provider, we are
+              responsible for our own content on these pages under the general
+              laws according to § 7 para.1 TMG. According to §§ 8 to 10 TMG, we
+              are not obligated as a service provider to monitor transmitted or
+              stored third-party information or to investigate circumstances
+              that indicate illegal activity. Obligations to remove or block the
+              use of information under the general laws remain unaffected.
+              However, liability in this regard is only possible from the point
+              in time at which a concrete infringement of the law becomes known.
+              If we become aware of any such infringements, we will remove this
+              content immediately.
+            </p>
+            <h3 class="text-xl font-semibold mb-2 mt-5">Liability for links</h3>
+            <p>
+              Our offer contains links to external websites of third parties, on
+              whose contents we have no influence. Therefore, we cannot assume
+              any liability for these external contents. The respective provider
+              or operator of the pages is always responsible for the content of
+              the linked pages. The linked pages were checked for possible legal
+              violations at the time of linking. Illegal contents were not
+              recognizable at the time of linking. However, a permanent control
+              of the contents of the linked pages is not reasonable without
+              concrete evidence of a violation of the law. If we become aware of
+              any infringements, we will remove such links immediately.
+            </p>
+          </section>
+
+          <section>
+            <h2
+              class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
+            >
+              Copyright
+            </h2>
+            <p>
+              The content and works created by the site operators on these pages
+              are subject to German copyright law. The reproduction, editing,
+              distribution, and any kind of exploitation outside the limits of
+              copyright require the written consent of the respective author or
+              creator. Downloads and copies of this site are only permitted for
+              private, non-commercial use. Insofar as the content on this site
+              was not created by the operator, the copyrights of third parties
+              are respected. In particular, third-party content is identified as
+              such. Should you nevertheless become aware of a copyright
+              infringement, please inform us accordingly. If we become aware of
+              any infringements, we will remove such content immediately.
+            </p>
+          </section>
+
+          <section>
+            <h2
+              class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
+            >
+              Privacy
+            </h2>
+            <p>
+              The use of our website is generally possible without providing
+              personal data. Insofar as personal data (for example name, address
+              or e-mail addresses) is collected on our pages, this is always
+              done, as far as possible, on a voluntary basis. This data will not
+              be passed on to third parties without your express consent. We
+              point out that data transmission over the Internet (e.g.,
+              communication by e-mail) may have security gaps. A complete
+              protection of data against access by third parties is not
+              possible.
+            </p>
+            <p>
+              The use of contact data published within the framework of the
+              imprint obligation by third parties for the purpose of sending
+              unsolicited advertising and information material is hereby
+              expressly prohibited. The operators of the pages expressly reserve
+              the right to take legal action in the event of the unsolicited
+              sending of advertising information, such as spam e-mails.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -12,10 +12,14 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="./assets/ico/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/svg/logo.svg" type="image/x-icon" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- Tailwind CSS -->
+    <script src="./assets/js/tailwind.js"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./globals.css" />
 
     <!-- Analytics -->
     <script
@@ -24,123 +28,155 @@
       data-domains="daytistics.com"
       data-website-id="9027f875-0244-4b7f-b298-6748df4fffb3"
     ></script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      function toggleDarkMode() {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        }
+      }
+    </script>
   </head>
-  <body>
-    <div class="container">
-      <img
-        src="../../assets/svg/logo.svg"
-        alt="Daytistics Logo"
-        class="logo"
-        width="180"
-        height="180"
-      />
+  <body class="bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+    <!-- Dark Mode Toggle -->
+    <button
+      onclick="toggleDarkMode()"
+      class="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+      aria-label="Toggle dark mode"
+    >
+      <svg
+        class="w-6 h-6 hidden dark:block text-yellow-500"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
+        />
+      </svg>
+      <svg
+        class="w-6 h-6 block dark:hidden text-gray-700"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+    </button>
 
-      <h1 class="heading">Daytistics</h1>
+    <!-- Main Content -->
+    <div class="min-h-screen flex flex-col items-center justify-center px-4">
+      <div class="w-full max-w-md text-center">
+        <img
+          src="./assets/svg/logo.svg"
+          alt="Daytistics Logo"
+          class="glow w-44 h-44 mx-auto -mt-8 mb-4"
+        />
 
-      <p>
-        A mobile app to track your daily activities and well-being with powerful
-        analytics. Transform your habits through data-driven insights.
-      </p>
+        <h1 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
+          Daytistics
+        </h1>
 
-      <p class="cta">
-        We are currently in development, but you can subscribe to our newsletter
-        below to stay updated!
-      </p>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          A mobile app to track your daily activities and well-being with
+          powerful analytics. Transform your habits through data-driven
+          insights.
+        </p>
 
-      <script
-        async
-        src="https://eocampaign1.com/form/5902487c-ca79-11ef-a8ef-dbcab30887e6.js"
-        data-form="5902487c-ca79-11ef-a8ef-dbcab30887e6"
-      ></script>
+        <p class="text-gray-600 dark:text-gray-300 mb-8">
+          We are currently in development, but you can subscribe to our
+          newsletter below to stay updated! Before and after the release of the
+          app, you will receive emails from which you can unsubscribe at any
+          time.
+        </p>
 
-      <div class="social-icons">
-        <a
-          data-umami-event="redirect-github"
-          href="https://github.com/daytistics"
-          class="social-icon social-icon-github"
-          target="_blank"
-          aria-label="Visit Daytistics on GitHub"
-        >
-          <svg
-            viewBox="0 0 20 20"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            fill="#000000"
+        <script
+          async
+          src="https://eocampaign1.com/form/5902487c-ca79-11ef-a8ef-dbcab30887e6.js"
+          data-form="5902487c-ca79-11ef-a8ef-dbcab30887e6"
+        ></script>
+
+        <div class="flex justify-center gap-4 mt-6">
+          <a
+            data-umami-event="redirect-github"
+            href="https://github.com/daytistics"
+            class="text-gray-800 dark:text-gray-200 hover:opacity-75 transition-colors"
+            target="_blank"
+            aria-label="Visit Daytistics on GitHub"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <title>github [#142]</title>
-              <desc>Created with Sketch.</desc>
-              <defs></defs>
-              <g
-                id="Page-1"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fill-rule="evenodd"
-              >
-                <g
-                  id="Dribbble-Light-Preview"
-                  transform="translate(-140.000000, -7559.000000)"
-                  fill="#000000"
-                >
-                  <g id="icons" transform="translate(56.000000, 160.000000)">
-                    <path
-                      d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                      id="github-[#142]"
-                    ></path>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </a>
-        <a
-          data-umami-event="redirect-polar"
-          href="https://polar.sh/daytistics"
-          class="social-icon social-icon-polar"
-          target="_blank"
-          aria-label="Donate to Daytistics on Polar"
-        >
-          <svg
-            viewBox="0 0 300 300"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_1_4)">
+            <svg class="w-7 h-7" viewBox="0 0 20 20">
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M66.4284 274.26C134.876 320.593 227.925 302.666 274.258 234.219C320.593 165.771 302.666 72.7222 234.218 26.3885C165.77 -19.9451 72.721 -2.0181 26.3873 66.4297C-19.9465 134.877 -2.01938 227.927 66.4284 274.26ZM47.9555 116.67C30.8375 169.263 36.5445 221.893 59.2454 256.373C18.0412 217.361 7.27564 150.307 36.9437 92.318C55.9152 55.2362 87.5665 29.3937 122.5 18.3483C90.5911 36.7105 62.5549 71.8144 47.9555 116.67ZM175.347 283.137C211.377 272.606 244.211 246.385 263.685 208.322C293.101 150.825 282.768 84.4172 242.427 45.2673C264.22 79.7626 269.473 131.542 252.631 183.287C237.615 229.421 208.385 265.239 175.347 283.137ZM183.627 266.229C207.945 245.418 228.016 210.604 236.936 168.79C251.033 102.693 232.551 41.1978 195.112 20.6768C214.97 47.3945 225.022 99.2902 218.824 157.333C214.085 201.724 200.814 240.593 183.627 266.229ZM63.7178 131.844C49.5155 198.43 68.377 260.345 106.374 280.405C85.9962 254.009 75.5969 201.514 81.8758 142.711C86.5375 99.0536 99.4504 60.737 116.225 35.0969C92.2678 55.983 72.5384 90.4892 63.7178 131.844ZM199.834 149.561C200.908 217.473 179.59 272.878 152.222 273.309C124.853 273.742 101.797 219.039 100.724 151.127C99.6511 83.2138 120.968 27.8094 148.337 27.377C175.705 26.9446 198.762 81.648 199.834 149.561Z"
                 fill="currentColor"
+                d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                transform="translate(-84 -7399)"
               />
-            </g>
-            <defs>
-              <clipPath id="clip0_1_4">
-                <rect width="300" height="300" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-        </a>
+            </svg>
+          </a>
+          <a
+            data-umami-event="redirect-polar"
+            href="https://polar.sh/daytistics"
+            class="text-blue-600 hover:opacity-75 transition-colors"
+            target="_blank"
+            aria-label="Donate to Daytistics on Polar"
+          >
+            <svg class="w-7 h-7" viewBox="0 0 300 300">
+              <path
+                fill="currentColor"
+                d="M66.4284 274.26C134.876 320.593 227.925 302.666 274.258 234.219C320.593 165.771 302.666 72.7222 234.218 26.3885C165.77 -19.9451 72.721 -2.0181 26.3873 66.4297C-19.9465 134.877 -2.01938 227.927 66.4284 274.26ZM47.9555 116.67C30.8375 169.263 36.5445 221.893 59.2454 256.373C18.0412 217.361 7.27564 150.307 36.9437 92.318C55.9152 55.2362 87.5665 29.3937 122.5 18.3483C90.5911 36.7105 62.5549 71.8144 47.9555 116.67ZM175.347 283.137C211.377 272.606 244.211 246.385 263.685 208.322C293.101 150.825 282.768 84.4172 242.427 45.2673C264.22 79.7626 269.473 131.542 252.631 183.287C237.615 229.421 208.385 265.239 175.347 283.137ZM183.627 266.229C207.945 245.418 228.016 210.604 236.936 168.79C251.033 102.693 232.551 41.1978 195.112 20.6768C214.97 47.3945 225.022 99.2902 218.824 157.333C214.085 201.724 200.814 240.593 183.627 266.229ZM63.7178 131.844C49.5155 198.43 68.377 260.345 106.374 280.405C85.9962 254.009 75.5969 201.514 81.8758 142.711C86.5375 99.0536 99.4504 60.737 116.225 35.0969C92.2678 55.983 72.5384 90.4892 63.7178 131.844ZM199.834 149.561C200.908 217.473 179.59 272.878 152.222 273.309C124.853 273.742 101.797 219.039 100.724 151.127C99.6511 83.2138 120.968 27.8094 148.337 27.377C175.705 26.9446 198.762 81.648 199.834 149.561Z"
+              />
+            </svg>
+          </a>
+          <a
+            data-umami-event="redirect-bluesky"
+            href="https://bsky.app/profile/daytistics.com"
+            class="text-blue-500 hover:opacity-75 transition-colors"
+            target="_blank"
+            aria-label="Follow Daytistics on BlueSky"
+          >
+            <svg class="w-7 h-7" viewBox="0 0 64 57">
+              <path
+                fill="currentColor"
+                d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Legal Pages (Bottom Right) -->
+      <div class="fixed bottom-4 right-4 flex gap-4 text-sm">
         <a
-          data-umami-event="redirect-bluesky"
-          href="https://bsky.app/profile/daytistics.bsky.social"
-          target="_blank"
-          aria-label="Follow Daytistics on BlueSky"
-          class="social-icon social-icon-bluesky"
+          data-umami-event="redirect-legal-notice"
+          href="/legal.html"
+          class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+          aria-label="Privacy Policy"
         >
-          <svg fill="none" viewBox="0 0 64 57" width="30">
-            <path
-              fill="currentColor"
-              d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"
-            ></path>
-          </svg>
+          Legal Notice
         </a>
       </div>
     </div>
