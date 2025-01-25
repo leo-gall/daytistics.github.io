@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Figtree';
+        src: url('./assets/ttf/Figtree-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+    }
+
+    :root {
+        --color-primary: #0e9f6e;
+    }
+
+    body {
+        font-family: 'Figtree', sans-serif !important;
+    }
+}
+
+@layer components {
+    .glow {
+        filter: drop-shadow(0 0 40px var(--color-primary));
+    }
+
+    #field_0 {
+        transition: all 0.2s;
+    }
+
+    html.dark #field_0 {
+        background-color: #222833 !important;
+        border: 1px solid #2d3b4a !important;
+        color: rgb(209 213 219 / var(--tw-text-opacity, 1)) !important;
+    }
+    
+    html.dark #field_0::placeholder {
+        color: rgb(209 213 219 / var(--tw-text-opacity, 1)) !important;
+    }
+
+    .form-container .emailoctopus-success-message {
+        --text-colour: #0e9f4f !important; 
+    }
+
+    .form-container .emailoctopus-error-message {
+        --text-colour: #e53320 !important; 
+    }
+}
