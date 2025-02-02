@@ -51,6 +51,10 @@
 .iphone {
     width: 375px;
     height: 667px;
+    @media (max-width: 600px) {
+        width: 300px;
+        height: 533px;
+    }
     background-color: #1c1c1e;
     border-radius: 50px;
     position: relative;
