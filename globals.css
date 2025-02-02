@@ -25,17 +25,17 @@
         filter: drop-shadow(0 0 40px var(--color-primary));
     }
 
-    #field_0 {
+    [id^=field_] {
         transition: all 0.2s;
     }
-
-    html.dark #field_0 {
+  
+    html.dark [id^=field_] {
         background-color: #222833 !important;
         border: 1px solid #2d3b4a !important;
         color: rgb(209 213 219 / var(--tw-text-opacity, 1)) !important;
     }
     
-    html.dark #field_0::placeholder {
+    html.dark [id^=field_]::placeholder {
         color: rgb(209 213 219 / var(--tw-text-opacity, 1)) !important;
     }
 
