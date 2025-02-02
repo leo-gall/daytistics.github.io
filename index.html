@@ -25,36 +25,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./globals.css" />
 
-    <!-- Analytics -->
-    <script
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-domains="daytistics.com"
-      data-website-id="9027f875-0244-4b7f-b298-6748df4fffb3"
-    ></script>
+    <!-- Custom Field Validation -->
+    <script src="./assets/js/validation.js"></script>
+
+    <!-- Posthog Analytics -->
+    <script src="./assets/js/posthog.js"></script>
 
     <!-- Dark Mode Toggle Script -->
-    <script>
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-
-      function toggleDarkMode() {
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark");
-          localStorage.theme = "light";
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.theme = "dark";
-        }
-      }
-    </script>
+    <script src="./assets/js/dark-mode.js"></script>
   </head>
   <body class="bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
     <!-- Dark Mode Toggle -->

@@ -21,36 +21,11 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./globals.css" />
 
-    <!-- Analytics -->
-    <script
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-domains="daytistics.com"
-      data-website-id="9027f875-0244-4b7f-b298-6748df4fffb3"
-    ></script>
+    <!-- Posthog Analytics -->
+    <script src="./assets/js/posthog.js"></script>
 
     <!-- Dark Mode Toggle Script -->
-    <script>
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-
-      function toggleDarkMode() {
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark");
-          localStorage.theme = "light";
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.theme = "dark";
-        }
-      }
-    </script>
+    <script src="./assets/js/dark-mode.js"></script>
   </head>
   <body class="bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
     <!-- Dark Mode Toggle -->
@@ -115,10 +90,11 @@
     <div class="min-h-screen py-16 px-4">
       <div class="max-w-3xl mx-auto">
         <h1 class="text-4xl font-bold mb-8 text-gray-800 dark:text-white">
-          Imprint
+          Imprint & Legal Information
         </h1>
 
         <div class="space-y-8 text-gray-600 dark:text-gray-300">
+          <!-- Imprint Section -->
           <section class="space-y-4">
             <h2
               class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
@@ -144,6 +120,7 @@
             </div>
           </section>
 
+          <!-- Disclaimer Section -->
           <section>
             <h2
               class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
@@ -151,7 +128,7 @@
               Disclaimer
             </h2>
             <h3 class="text-xl font-semibold mb-2 mt-5">
-              Liability for contents
+              Liability for Contents
             </h3>
             <p>
               The contents of our pages were created with the utmost care.
@@ -168,7 +145,7 @@
               If we become aware of any such infringements, we will remove this
               content immediately.
             </p>
-            <h3 class="text-xl font-semibold mb-2 mt-5">Liability for links</h3>
+            <h3 class="text-xl font-semibold mb-2 mt-5">Liability for Links</h3>
             <p>
               Our offer contains links to external websites of third parties, on
               whose contents we have no influence. Therefore, we cannot assume
@@ -183,6 +160,7 @@
             </p>
           </section>
 
+          <!-- Copyright Section -->
           <section>
             <h2
               class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
@@ -204,6 +182,7 @@
             </p>
           </section>
 
+          <!-- Privacy Section -->
           <section>
             <h2
               class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
@@ -212,11 +191,14 @@
             </h2>
             <p>
               The use of our website is generally possible without providing
-              personal data. Insofar as personal data (for example name, address
-              or e-mail addresses) is collected on our pages, this is always
-              done, as far as possible, on a voluntary basis. This data will not
-              be passed on to third parties without your express consent. We
-              point out that data transmission over the Internet (e.g.,
+              personal data. Insofar as personal data (for example name,
+              address, or e-mail addresses) is collected on our pages, this is
+              always done, as far as possible, on a voluntary basis. This data
+              will not be passed on to third parties without your express
+              consent.
+            </p>
+            <p>
+              Please note that data transmission over the Internet (e.g.,
               communication by e-mail) may have security gaps. A complete
               protection of data against access by third parties is not
               possible.
@@ -228,6 +210,89 @@
               expressly prohibited. The operators of the pages expressly reserve
               the right to take legal action in the event of the unsolicited
               sending of advertising information, such as spam e-mails.
+            </p>
+          </section>
+
+          <!-- PostHog & GDPR Compliance Section -->
+          <section>
+            <h2
+              class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
+            >
+              PostHog & GDPR Compliance
+            </h2>
+            <p>
+              Daytistics uses PostHog to gather product analytics. In line with
+              GDPR, we only collect, store, and process personal data when there
+              is a clear and lawful basis. Personal data includes any
+              information that can identify an individual, such as names, email
+              addresses, location data, or cookies.
+            </p>
+            <p>
+              <strong>Consent:</strong> Before any personal data is captured, we
+              obtain explicit, unambiguous consent. Users can withdraw their
+              consent at any time, which will halt further data capture and
+              processing.
+            </p>
+            <p>
+              <strong>Data Security:</strong> Data is transmitted via HTTPS and
+              is protected through encryption and other technical and
+              organizational measures. In case of a data breach, affected users
+              will be notified within 72 hours unless data is rendered unusable
+              through encryption.
+            </p>
+            <p>
+              <strong>User Rights:</strong> Users have the right to request
+              deletion ("right to be forgotten") of their personal data.
+              Requests can be made via our support channels and will be
+              processed promptly, including removal from our PostHog instance.
+            </p>
+            <p>
+              <strong>Configuration:</strong> For users within the EU, data is
+              processed on servers in the EU or anonymized if processed
+              elsewhere. Users may opt out of tracking at any time using the
+              provided mechanisms (e.g., by calling
+              <code>posthog.opt_out_capturing()</code>).
+            </p>
+          </section>
+
+          <!-- Newsletter Agreement Section -->
+          <section>
+            <h2
+              class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-100"
+            >
+              Newsletter Agreement
+            </h2>
+            <p>
+              When you subscribe to the Daytistics newsletter, you agree to
+              receive regular updates, news, and offers from us.
+            </p>
+            <p>
+              <strong>Consent:</strong> By entering your email address and
+              confirming your subscription, you give explicit permission for us
+              to process your personal data for newsletter communication.
+            </p>
+            <p>
+              <strong>Double Opt-In:</strong> After signing up, you will receive
+              a confirmation email. Your subscription is activated only after
+              you confirm your email, ensuring clear and verifiable consent.
+            </p>
+            <p>
+              <strong>Email Provider:</strong> We use EmailOctopus as our email
+              provider to send our newsletters.
+            </p>
+            <p>
+              <strong>Unsubscribe:</strong> You can opt out at any time using
+              the unsubscribe link in every newsletter email.
+            </p>
+            <p>
+              <strong>Data Use:</strong> Your email address is used solely for
+              newsletter communications and will not be shared or sold to third
+              parties.
+            </p>
+            <p>
+              <strong>Data Security:</strong> Your information is stored
+              securely and handled according to our privacy policy and GDPR
+              guidelines.
             </p>
           </section>
         </div>
