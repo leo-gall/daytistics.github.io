@@ -44,5 +44,5 @@
 })(document, window.posthog || []);
 posthog.init("phc_zwP7m2GXny8DzZOqZpoN6dqgXroSq75qNYZmriemCgP", {
   api_host: "https://eu.i.posthog.com",
-  person_profiles: "always",
+  person_profiles: "identified_only",
 });
